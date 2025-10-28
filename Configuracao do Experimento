@@ -1,0 +1,11 @@
+# Tamanhos dos vetores de entrada (cada lista)
+TAMANHOS = [100, 300, 1_000, 3_000, 10_000, 30_000, 100_000, 300_000, 1_000_000]
+
+def numero_de_testes(n: int) -> int:
+    if n <= 30_000: return 10
+    if n <= 100_000: return 5
+    if n <= 300_000: return 3
+    return 1  # para n muito grande
+
+resultados = []
+

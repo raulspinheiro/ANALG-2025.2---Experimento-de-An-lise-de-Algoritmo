@@ -1,6 +1,6 @@
 ---
-title: Comparação Experimental de Algoritmos para Cálculo da Mediana
-  Combinada de Duas Listas Ordenadas
+# Comparação Experimental de Algoritmos para Cálculo da Mediana
+#  Combinada de Duas Listas Ordenadas
 ---
 
 Raul Santiago Pinheiro e Pedro Albano Lopes Braga
@@ -100,10 +100,8 @@ Conquista cresce muito mais lentamente, confirmando sua vantagem teórica
 para grandes volumes de dados. Nenhuma divergência foi observada nos
 resultados numéricos.
 
-![](media/image1.png){width="5.5in" height="3.4375in"}
-
-Figura 1 --- Tempo médio de execução dos dois algoritmos em ambiente
-Colab PRO+ com GPU H100.
+![Figura 1 --- Tempo médio de execução dos dois algoritmos em ambiente
+Colab PRO+ com GPU H100.](./Figura 1.jpeg)
 
 # 4. Discussão
 

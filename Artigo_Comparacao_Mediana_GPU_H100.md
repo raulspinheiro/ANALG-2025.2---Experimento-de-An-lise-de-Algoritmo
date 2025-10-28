@@ -103,6 +103,10 @@ resultados numéricos.
 ![Figura 1 --- Tempo médio de execução dos dois algoritmos em ambiente
 Colab PRO+ com GPU H100.](./figura1.jpg)
 
+
+
+![Tabela 1 — Tamanho das entradas, quantidade de execuções repetidas. desempenho dos algoritmos. consistência da execução. validação de correção.](./tabela1.jpg)
+
 # 4. Discussão
 
 Os resultados obtidos confirmam que, embora ambos os algoritmos

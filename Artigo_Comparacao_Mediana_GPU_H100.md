@@ -101,7 +101,7 @@ para grandes volumes de dados. Nenhuma divergência foi observada nos
 resultados numéricos.
 
 ![Figura 1 --- Tempo médio de execução dos dois algoritmos em ambiente
-Colab PRO+ com GPU H100.](./Figura 1.jpg)
+Colab PRO+ com GPU H100.](./figura1.jpg)
 
 # 4. Discussão
 

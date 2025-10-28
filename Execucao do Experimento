@@ -1,0 +1,45 @@
+for n in TAMANHOS:
+    T = numero_de_testes(n)
+
+    tempos_juntar = []
+    tempos_div_conq = []
+    divergencias = 0
+
+    for t in range(T):
+        semente_a = (n * 73856093) ^ (t * 19349663) ^ 0xABC
+        semente_b = (n * 83492791) ^ (t * 297657976) ^ 0xDEF
+        A = gerar_salarios_ordenados(n, semente_a)
+        B = gerar_salarios_ordenados(n, semente_b)
+
+        # Tempo — juntar e ordenar
+        inicio = time.perf_counter()
+        m1 = mediana_juntar_ordenar(A, B)
+        fim = time.perf_counter()
+        tempos_juntar.append(fim - inicio)
+
+        # Tempo — divisão e conquista
+        inicio = time.perf_counter()
+        m2 = mediana_divisao_conquista(A, B)
+        fim = time.perf_counter()
+        tempos_div_conq.append(fim - inicio)
+
+        if abs(m1 - m2) > 1e-9:
+            divergencias += 1
+
+    registro = {
+        "n_cada_lista": n,
+        "N_total": 2*n,
+        "ensaios": T,
+        "tempo_médio_juntar_ordenar": statistics.mean(tempos_juntar),
+        "desvio_juntar_ordenar": statistics.pstdev(tempos_juntar) if len(tempos_juntar) > 1 else 0.0,
+        "tempo_médio_divisão_conquista": statistics.mean(tempos_div_conq),
+        "desvio_divisão_conquista": statistics.pstdev(tempos_div_conq) if len(tempos_div_conq) > 1 else 0.0,
+        "divergências": divergencias,
+    }
+    resultados.append(registro)
+
+df = pd.DataFrame.from_records(resultados).sort_values("n_cada_lista").reset_index(drop=True)
+
+# Exibir tabela no Colab / Jupyter
+display(df)
+

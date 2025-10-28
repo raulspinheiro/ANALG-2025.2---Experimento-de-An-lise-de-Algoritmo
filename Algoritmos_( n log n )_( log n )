@@ -1,0 +1,45 @@
+def mediana_juntar_ordenar(a: List[float], b: List[float]) -> float:
+    """Concatena as listas, ordena e retorna a mediana combinada."""
+    c = a + b
+    c.sort()
+    L = len(c)
+    if L % 2 == 1:
+        return c[L//2]
+    else:
+        return (c[L//2 - 1] + c[L//2]) / 2.0
+
+def mediana_divisao_conquista(a: List[float], b: List[float]) -> float:
+    """
+    Algoritmo de mediana O(log min(m, n)) usando partição binária.
+    Assume que ambas as listas já estão ordenadas.
+    """
+    if len(a) > len(b):
+        a, b = b, a
+    m, n = len(a), len(b)
+    total = m + n
+    metade = total // 2
+
+    esquerda, direita = 0, m
+    INF = float("inf")
+    NINF = -float("inf")
+
+    while True:
+        i = (esquerda + direita) // 2
+        j = metade - i
+
+        a_esq  = a[i-1] if i > 0 else NINF
+        a_dir  = a[i]   if i < m else INF
+        b_esq  = b[j-1] if j > 0 else NINF
+        b_dir  = b[j]   if j < n else INF
+
+        # Partição correta encontrada
+        if a_esq <= b_dir and b_esq <= a_dir:
+            if total % 2 == 1:
+                return min(a_dir, b_dir)
+            else:
+                return (max(a_esq, b_esq) + min(a_dir, b_dir)) / 2.0
+        elif a_esq > b_dir:
+            direita = i - 1
+        else:
+            esquerda = i + 1
+

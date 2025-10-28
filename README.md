@@ -1,0 +1,1 @@
+# ANALG-2025.2---Experimento-de-An-lise-de-Algoritmo

@@ -1,0 +1,7 @@
+def gerar_salarios_ordenados(n: int, semente: int) -> List[int]:
+    """Gera lista de salários pseudo-realistas ordenados em ordem crescente."""
+    rng = random.Random(semente)
+    mu, sigma = 9.5, 0.7  # distribuição log-normal aproximada
+    valores = [int(min(1_000_000, max(800, math.exp(rng.gauss(mu, sigma))))) for _ in range(n)]
+    valores.sort()
+    return valores

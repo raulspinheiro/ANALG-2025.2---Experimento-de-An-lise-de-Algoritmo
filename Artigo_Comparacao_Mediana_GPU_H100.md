@@ -100,12 +100,18 @@ Conquista cresce muito mais lentamente, confirmando sua vantagem teórica
 para grandes volumes de dados. Nenhuma divergência foi observada nos
 resultados numéricos.
 
+
+Figura 1 — Tempo médio de execução dos dois algoritmos em ambiente Colab PRO+ com GPU H100.
+
 ![Figura 1 --- Tempo médio de execução dos dois algoritmos em ambiente
 Colab PRO+ com GPU H100.](./figura1.jpg)
 
-
+Tabela 1 — Tamanho das entradas, quantidade de execuções repetidas. desempenho dos algoritmos. consistência da execução. validação de correção.
 
 ![Tabela 1 — Tamanho das entradas, quantidade de execuções repetidas. desempenho dos algoritmos. consistência da execução. validação de correção.](./tabela1.jpg)
+
+A tabela 1 gerada resume os resultados experimentais da comparação entre os dois algoritmos analisados,  Juntar e Ordenar e Divisão e Conquista, apresentando, para cada tamanho de entrada, o número total de elementos processados, o número de ensaios executados, os tempos médios e seus respectivos desvios padrão, além da contagem de divergências entre os resultados. Observa-se que o tempo médio do algoritmo de Juntar e Ordenar cresce de forma acentuada conforme o tamanho das listas aumenta, confirmando seu comportamento O(n log n), enquanto o método de Divisão e Conquista mantém tempos muito menores e estáveis, refletindo sua eficiência O(log n). Os desvios padrão baixos indicam consistência nas medições, e a ausência de divergências confirma que ambos produzem resultados idênticos, validando a correção das implementações.
+
 
 # 4. Discussão
 
